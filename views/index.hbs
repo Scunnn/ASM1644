@@ -1,0 +1,15 @@
+<div class="row">
+{{#each toy }}
+<div class=" col col-4 mt-3">
+    <div class="card  " style="width: 18rem;">
+  <img class="card-img-top" src="{{image}}" height="320" width="300">
+  <div class="card-body">
+    <h3 class="card-title">{{name}}</h3>
+    <h4 class="text-danger">Price: {{price}} $</h4>
+    <a href="toy/detail/{{_id}}" class="btn btn-primary">View Detail</a>
+  </div>
+</div>
+</div>
+   
+{{/each}}
+</div>

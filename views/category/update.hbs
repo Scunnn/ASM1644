@@ -1,0 +1,19 @@
+<form action="/category/edit/{{category._id}}" method="post" class="card p-3 bg-light text-center">
+   <h2 class="text text-primary">Edit Category</h2>
+   <div class="form-group">
+      <label class="text-success h6">Category Name</label>
+      <input class="form-control" type="text" name="name" value="{{category.name}}" required minlength="3"
+         maxlength="20">
+   </div>
+   
+   <div class="form-group mt-3">
+      <label class="text-success h6">Category Image</label><br>
+      <img src="{{category.image}}" width="100" height="100"><br>
+      <br>
+      <input class="form-control" type="text" name="image" value="{{category.image}}" required>
+   </div>
+
+   <div class="form-group mt-3">
+      <input class="btn btn-primary mt-3" type="submit" value="Edit">
+   </div>
+</form>
