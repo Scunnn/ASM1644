@@ -12,7 +12,7 @@ var app = express();
 
 var mongoose = require('mongoose')
 //var url = 'mongodb://localhost:27017/asm1644'
-var url = 'mongodb+srv://pmt2605:712110119@cluster0.jsypewx.mongodb.net/asm1644'
+var url = 'mongodb+srv://pmt2605:712110119@cluster0.jsypewx.mongodb.net/demo'
 var cors = require('cors')
 mongoose.connect(url, { useNewUrlParser: true }, err => {
   if (!err) {
