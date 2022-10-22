@@ -11,8 +11,8 @@ var categoryRouter = require('./routes/category');
 var app = express();
 
 var mongoose = require('mongoose')
- var url = 'mongodb://localhost:27017/asm1644'
-//var url = 'mongodb+srv://pmt2605:712110119@cluster0.jsypewx.mongodb.net/asm1644'
+//var url = 'mongodb://localhost:27017/asm1644'
+var url = 'mongodb+srv://pmt2605:712110119@cluster0.jsypewx.mongodb.net/asm1644'
 var cors = require('cors')
 mongoose.connect(url, { useNewUrlParser: true }, err => {
   if (!err) {
@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/',toyRouter);
 app.use('/toy',toyRouter);
 app.use('/category', categoryRouter);
-//app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
