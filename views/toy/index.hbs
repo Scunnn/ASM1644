@@ -1,53 +1,56 @@
-<table class="table table-bordered bg-light p-4 mt-3 mb-3 text-center">
-   <tr>
-      <th colspan="5">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+      <h4 class="col-md-3 mt-2 mb-2 container">Sort </h4>
+      <div class="col-md-3 mt-2 mb-2 container text-left left">
          <select class="form-control" onchange="window.location.href=this.value">
             <option value="">Sort by name</option>
             <option value="/toy/sort/asc">Ascending</option>
             <option value="/toy/sort/desc">Descending</option>
          </select>
-      </th>
-      <th colspan="2">
-         <form action="toy/search" method="post">
+   </div>
+    <h4 class="col-md-3 mt-2 mb-2 container">Search </h4>
+   <div class="col-md-3 mt-2 mb-2 right container text-center">
+         <form action="/toy/search" method="post">
          <div class="form-group">
              <input class="form-control" type="search" name="name" placeholder="Ener toy name to search">
          </div>
          </form>
-      </th>
-   </tr>
-   <tr>
-      <th class="text-primary" colspan="5">Toy List</th>
-      <th>
-         <a class="btn btn-primary" href="/toy/add">ADD</a>
-      </th>
-   </tr>
-   
-   <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Year</th>
-      <th>Image</th>
-      <th>Description</th>
-      <th>Menu</th>
-   </tr>
+      </div>
+   </div>
 
-   
-
-   {{#each toy }}
-   <tr>
-      <td>{{name}}</td>
-      <td>{{price}}</td>
-      <td>{{year}}</td>
-      <td>
-         <a href="toy/detail/{{_id}}">
-            <img src="{{image}}" width="100" height="100">
-         </a>
-      </td>
-      <td>{{description}}</td>
-      <td>
-         <a class="btn btn-warning" href="toy/edit/{{_id}}">EDIT</a>
-         <a class="btn btn-danger" href="toy/delete/{{_id}}">DELETE</a>
-      </td>
-   </tr>
-   {{/each}}
-</table>
+<h1 class="text-danger">Toy</h1>
+<a href="/add"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsH-kmHwy1iJgBeyrDPIRgPvkvh5MH1UMGg&usqp=CAU" height="30" width="30"></a>
+<div class="container text-center">
+   <div class="card-group">
+      <div class="row">
+         {{#each toy}}
+         <div class="card col-md-3 m-3">
+            <a href="/toy/detail/{{_id}}">
+               <img class="card-img-top mt-4" src="{{image}}" width="400" height="400">
+            </a>
+            <div class="card-body">
+               <h4 class="card-title text-success">{{name}}</h4>
+               <p class="card-text text-danger">{{description}}</p>
+               <h4 class="text-danger">Price: {{price}} $</h4>
+               <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="toy/edit/{{_id}}" class="text-warning"> <img src="https://www.svgrepo.com/show/36160/edit-button.svg" height="40" width="40"></a> </li>
+                  <li class="list-group-item"><a href="toy/delete/{{_id}}" class="text-warning"> <img src="https://www.svgrepo.com/show/21045/delete-button.svg"height="40" width="40"></a> </li>
+                  <li class="list-group-item"><a href="toy/detail/{{_id}}" class="text-warning"> <button class="btn btn-success">VIEW DETAIL</button></a> </li>
+               </ul>
+            </div>
+         </div>
+         {{/each}}
+      </div>
+   </div>
+</div>
+</body>
+</html>

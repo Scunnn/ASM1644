@@ -1,24 +1,25 @@
-<table class="table table-bordered bg-light p-4 mt-3 mb-3 text-center">
-   <tr>
-      <th class="text-primary" colspan="2">Category List</th>
-      <th>
-         <a class="btn btn-primary" href="/category/add">ADD</a>
-      </th>
-   </tr>
-   <tr>
-      <th>Name</th>
-      <th>Image</th>
-      <th>Menu</th>
-   </tr>
+<h1 class="text-danger">Category</h1>
+<a href="/category/add"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsH-kmHwy1iJgBeyrDPIRgPvkvh5MH1UMGg&usqp=CAU" height="30" width="30"></a>
 
-   {{#each category }}
-   <tr>
-      <td>{{name}}</td>
-      <td><img src="{{image}}" width="100" height="100"></td>
-      <td>
-         <a class="btn btn-warning" href="category/edit/{{_id}}">EDIT</a>
-         <a class="btn btn-danger" href="category/delete/{{_id}}">DELETE</a>
-      </td>
-   </tr>
-   {{/each}}
-</table>
+<div class="container text-center">
+   <div class="card-group">
+      <div class="row">
+         {{#each category}}
+         <div class="card col-md-3 m-3">
+            <a href="/category/detail/{{_id}}">
+               <img class="card-img-top mt-4" src="{{image}}" width="400" height="400">
+            </a>
+            <div class="card-body">
+               <h4 class="card-title text-success">{{name}}</h4>
+               <p class="card-text text-danger">{{description}}</p>
+               <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="category/edit/{{_id}}" class="text-warning"> <img src="https://www.svgrepo.com/show/36160/edit-button.svg" height="40" width="40"></a> </li>
+                  <li class="list-group-item"><a href="category/delete/{{_id}}" class="text-warning"> <img src="https://www.svgrepo.com/show/21045/delete-button.svg"height="40" width="40"></a> </li>
+                  <li class="list-group-item"><a href="category/detail/{{_id}}" class="text-warning"> <button class="btn btn-success">VIEW DETAIL</button></a> </li>
+               </ul>
+            </div>
+         </div>
+         {{/each}}
+      </div>
+   </div>
+</div>

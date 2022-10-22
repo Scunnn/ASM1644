@@ -71,5 +71,12 @@ router.post('/edit/:id', (req, res) => {
      }
    })
 })
+router.get('/detail/:id', (req, res) => {
+   CategoryModel.findById(req.params.id, (err, toy) => {
+      if (!err) {
+         res.render('category/info',{toy: toy})
+      }
+   });
+});
 
 module.exports = router

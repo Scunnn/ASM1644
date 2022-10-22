@@ -2,18 +2,15 @@
    <h2 class="text text-primary">Edit Toy</h2>
    <div class="form-group">
       <label class="text-success h6">Toy Name</label>
-      <input class="form-control" type="text" name="name" value="{{toy.name}}" required minlength="3"
-         maxlength="20">
+      <input class="form-control" type="text" name="name" value="{{toy.name}}" required >
    </div>
    <div class="form-group mt-3">
       <label class="text-success h6">Toy Price</label>
-      <input class="form-control" type="number" name="price" value="{{toy.price}}" required minlength="3"
-         maxlength="10000">
+      <input class="form-control" type="number" name="price" value="{{toy.price}}" required >
    </div>
    <div class="form-group mt-3">
       <label class="text-success h6">Toy Year</label>
-      <input class="form-control" type="number" name="year" value="{{toy.year}}" required minlength="1000"
-         maxlength="2023">
+      <input class="form-control" type="number" name="year" value="{{toy.year}}" >
    </div>
    <div class="form-group mt-3">
       <label class="text-success h6">Toy Image</label><br>
@@ -23,8 +20,11 @@
    
    <div class="form-group">
       <label class="text-success h6">Toy Description</label>
-      <input class="form-control" type="text" name="description" value="{{toy.description}}" required minlength="3"
-         maxlength="20">
+      <input class="form-control" type="text" name="description" value="{{toy.description}}">
+   </div>
+    <div class="form-group">
+      <label class="text-success h6">Toy Long Description</label>
+      <input class="form-control" type="text" name="longdescription"  value="{{toy.longdescription}}" required minlength="3" maxlength="70">
    </div>
 
    <div class="form-group mt-3">

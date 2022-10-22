@@ -7,12 +7,8 @@ router.get('/', (req, res) => {
   res.render('index')
 })
 
-router.get('/pmt', (req, res) => {
+router.get('/about', (req, res) => {
   res.render('pmt')
 })
-
-
-
-
 
 module.exports = router
