@@ -1,25 +1,37 @@
 <h1 class="text-danger">Category</h1>
 <a href="/category/add"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsH-kmHwy1iJgBeyrDPIRgPvkvh5MH1UMGg&usqp=CAU" height="30" width="30"></a>
 
-<div class="container text-center">
-   <div class="card-group">
-      <div class="row">
-         {{#each category}}
-         <div class="card col-md-3 m-3">
-            <a href="/category/detail/{{_id}}">
-               <img class="card-img-top mt-4" src="{{image}}" width="400" height="400">
-            </a>
-            <div class="card-body">
-               <h4 class="card-title text-success">{{name}}</h4>
-               <p class="card-text text-danger">{{description}}</p>
-               <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><a href="category/edit/{{_id}}" class="text-warning"> <img src="https://www.svgrepo.com/show/36160/edit-button.svg" height="40" width="40"></a> </li>
-                  <li class="list-group-item"><a href="category/delete/{{_id}}" class="text-warning"> <img src="https://www.svgrepo.com/show/21045/delete-button.svg"height="40" width="40"></a> </li>
-                  <li class="list-group-item"><a href="category/detail/{{_id}}" class="text-warning"> <button class="btn btn-success">VIEW DETAIL</button></a> </li>
-               </ul>
-            </div>
-         </div>
-         {{/each}}
-      </div>
-   </div>
-</div>
+<table class="table table-warning mt-3">
+
+    <thead>
+        
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Suitable Age</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+ 
+    {{#each category }}
+   <tr>
+   <td><a>{{name}}</a></td>
+    <td>
+        <a href="/category/detail/{{_id}}">
+            <img src="{{image}}" width="180" height="180">
+         </a>
+    
+    <td>{{suitable_age}}</td>
+    <td>{{description}}</td>
+      <td>
+         <a  href="/category/edit/{{_id}}"><img src="https://www.svgrepo.com/show/36160/edit-button.svg" height="40" width="40"/></a>
+         <a  href="/category/delete/{{_id}}" 
+         onclick="return confirm('Are you sure to delete ?')";><img src="https://www.svgrepo.com/show/21045/delete-button.svg" height="40" width="40" ></a>
+      </td>
+   </tr>
+   {{/each}}
+       
+    </tbody>
+  </table>

@@ -1,6 +1,6 @@
 
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -9,13 +9,12 @@
   <div class="carousel-inner">
     <div class="carousel-item active">    
 		  <img src="https://cdn.singpromos.com/wp-content/uploads/2022/09/Takashimaya-Craziest-Toys-feat-2-Sep-2022.jpg"  width="1419" height="500"  alt="...">
-     
     </div>
     <div class="carousel-item">
       <img src="https://previews.agefotostock.com/previewimage/medibigoff/8240153c19959f0818b4f44ecb273e69/esy-040748802.jpg"  width="1419" height="500"  alt="...">
     </div>
     <div class="carousel-item">
- <img src="https://www.manilaonsale.com/wp-content/uploads/2019/11/Toy-Kingdom-Toy-Warehouse-Sale-2019-poster-fb.jpg" width="1419" height="500" alt="...">
+      <img src="https://www.manilaonsale.com/wp-content/uploads/2019/11/Toy-Kingdom-Toy-Warehouse-Sale-2019-poster-fb.jpg" width="1419" height="500" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -32,15 +31,17 @@
    <div class="card-group">
       <div class="row">
          {{#each toy}}
-         <div class="card col-md-3 m-3">
+         <div class="col col-3 mt-3 mb-3" >
+         <div class="card h-100  m-3">
             <a href="/toy/detail/{{_id}}">
-               <img class="card-img-top mt-4" src="{{image}}" width="500" height="500">
+               <img class="card-img-top mt-4" src="{{image}}" width="300" height="300">
             </a>
             <div class="card-body">
                <h4 class="card-title text-success">{{name}}</h4>
                <p class="card-text text-danger">{{description}}</p>
                <h4 class="text-danger">Price: {{price}} $</h4>
             </div>
+         </div>
          </div>
          {{/each}}
       </div>
